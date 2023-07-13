@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Rooms</title>
+</head>
+<body>
+Select Group :
+<form method="post">
+    {% csrf_token %}
+    <select name="group">
+    {% for chat in groups %}
+        <option value="{{chat.id}}">{{chat.name}}</option>
+    {% endfor %}
+    </select><br>
+    <button>Submit</button>
+</form>
+</body>
+</html>
